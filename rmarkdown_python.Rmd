@@ -1,0 +1,101 @@
+---
+title: "Diagramas de Barras - Matplotlib"
+author: "Renzo Cáceres Rossi"
+date: "2022/05/18"
+subtitle: Bar Charts
+phone: '51917337684'
+email: arenzocaceresrossi@gmail.com
+output:
+  html_document:
+    toc: TRUE
+    toc_float: TRUE
+    code_download: TRUE
+    theme: flatly
+---
+
+```{r setup,include=FALSE}
+
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## BarChart_001
+
+```{python,fig.align="center",results='hide',collapse=TRUE}
+import matplotlib.pyplot as plt
+ 
+
+eje_x = ['Python', 'R', 'Node.js', 'PHP']
+ 
+
+eje_y = [50,20,35,47]
+ 
+
+plt.bar(eje_x, eje_y)
+ 
+
+plt.ylabel('Cantidad de usuarios')
+ 
+
+plt.xlabel('Lenguajes de programación')
+ 
+
+plt.title('Usuarios de lenguajes de programación')
+ 
+
+plt.show()
+```
+
+
+## BarCharts_002
+
+```{python,fig.align="center",results='hide',collapse=TRUE}
+import matplotlib.pyplot as plt
+ 
+eje_x = ['Programacion', 'Ciencia de datos', 'Matematicas', 'Ingenieria']
+ 
+eje_y = [76,31,45,57]
+ 
+plt.barh(eje_x, eje_y, color="green")
+
+plt.ylabel('Numero de Empleados')
+
+plt.xlabel('Habilidades')
+
+plt.title('Empleados con habilidades')
+
+plt.show()
+```
+
+
+## BarCharts_003
+
+```{python,fig.align="center",results='hide',collapse=TRUE}
+import numpy as np
+import matplotlib.pyplot as plt
+ 
+serie_1 = [406, 387, 442, 457, 485]
+serie_2 = [421, 453, 435, 478, 512]
+ 
+ 
+numero_de_grupos = len(serie_1)
+indice_barras = np.arange(numero_de_grupos)
+ancho_barras =0.35
+ 
+plt.bar(indice_barras, serie_1, width=ancho_barras, label='Hombres')
+plt.bar(indice_barras + ancho_barras, serie_2, width=ancho_barras, label='Mujeres')
+plt.legend(loc='best')
+
+plt.xticks(indice_barras + ancho_barras, ('2017', '2018', '2019', '2020','2021'))
+ 
+plt.ylabel('Numero de habitantes')
+plt.xlabel('Año')
+plt.title('Numero de habitantes por genero')
+ 
+plt.show()
+```
+
+
+<div class="tocify-extend-page" data-unique="tocify-extend-page" style="height: 0;"></div>
+
+
+

@@ -1,0 +1,11 @@
+name: Publish Document
+title:
+username:
+account: rpubs
+server: rpubs.com
+hostUrl: rpubs.com
+appId: https://api.rpubs.com/api/v1/document/906664/2b7a51dedf8d4de386cc071cdba9d2f3
+bundleId: https://api.rpubs.com/api/v1/document/906664/2b7a51dedf8d4de386cc071cdba9d2f3
+url: http://rpubs.com/renzo_caceres_rossiv/906664
+when: 1653442024.81245
+lastSyncTime: 1653442024.81247

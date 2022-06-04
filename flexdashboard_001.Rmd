@@ -1,0 +1,143 @@
+---
+title: "Bar Charts"
+date: "`r Sys.Date()`"
+output: 
+  flexdashboard::flex_dashboard:
+    orientation: columns
+    vertical_layout: fill
+    social: menu
+    source: embed
+---
+
+```{r setup, include=FALSE}
+library(flexdashboard)
+
+library(ggplot2)
+
+library(lattice)
+```
+
+
+# Diagramas de Barras {data-icon="fa-chart-bar"}
+
+Column {data-width=333}
+-----------------------------------------------------------------------
+
+### barplot()
+
+```{r barplot_01,fig.align='center'}
+x <- table(mtcars$cyl)
+
+colores <- c("orange","blue","purple")
+
+barplot(x,xlab="Cilindros",ylab="Frecuencias",main="Número de Cilindros",col=colores)
+```
+
+Column {data-width=333}
+-----------------------------------------------------------------------
+
+### ggplot2
+
+```{r ggplot2,fig.align='center'}
+ggplot(mtcars,aes(cyl)) + geom_bar(fill=colores) + labs(x="Cillindros",y="Frecuencias",title="Número de Cilindros") + theme_dark()
+
+```
+
+Column {data-width=334}
+-----------------------------------------------------------------------
+
+### lattice
+
+```{r lattice_01,fig.align='center'}
+barchart(x,xlab="Cilindros",ylab="Frecuencias",main="Número de Cilindros",col=colores,horizontal=FALSE)
+```
+
+
+# barplot() {data-icon="fa-chart-bar"}
+
+
+Column {data-width=1000}
+-------------------------------------------------------------------------
+
+```{r barplot_02,fig.align='center'}
+x <- table(mtcars$cyl)
+
+colores <- c("orange","blue","purple")
+
+barplot(x,xlab="Cilindros",ylab="Frecuencias",main="Número de Cilindros",col=colores)
+```
+
+
+
+# ggplot2 {data-icon="fa-chart-bar"}
+
+
+Column {data-width=1000}
+------------------------------------------------------------------------------
+
+```{r ggplot2_01,fig.align='center'}
+ggplot(mtcars,aes(cyl)) + geom_bar(fill=colores) + labs(x="Cillindros",y="Frecuencias",title="Número de Cilindros") + theme_dark()
+
+```
+
+
+# lattice {data-icon="fa-chart-bar"}
+
+
+Column {data-width=1000}
+--------------------------------------------------------------------------------
+
+
+```{r lattice_02,fig.align='center'}
+barchart(x,xlab="Cilindros",ylab="Frecuencias",main="Número de Cilindros",col=colores,horizontal=FALSE)
+```
+
+
+# All_together {data-icon="fa-chart-bar"}
+
+
+## {.tabset}
+
+### barplot
+
+```{r barplot_03,fig.align='center'}
+x <- table(mtcars$cyl)
+
+colores <- c("orange","blue","purple")
+
+barplot(x,xlab="Cilindros",ylab="Frecuencias",main="Número de Cilindros",col=colores)
+```
+
+### ggplot2
+
+```{r ggplot2_02,fig.align='center'}
+ggplot(mtcars,aes(cyl)) + geom_bar(fill=colores) + labs(x="Cillindros",y="Frecuencias",title="Número de Cilindros") + theme_dark()
+
+```
+
+
+### lattice
+
+
+```{r lattice_32,fig.align='center'}
+barchart(x,xlab="Cilindros",ylab="Frecuencias",main="Número de Cilindros",col=colores,horizontal=FALSE)
+```
+
+
+### mtcars_cyl_gear
+
+```{r mtcars,fig.align='center'}
+
+par(mfrow=c(1,2))
+
+x <- table(mtcars$cyl)
+
+colores <- c("orange","blue","purple")
+
+barplot(x,xlab="Cilindros",ylab="Frecuencias",main="Número de Cilindros",col=colores)
+
+y <- table(mtcars$gear)
+
+barplot(y,xlab="Número de Engranajes",ylab="Frecuencias",main="Número de Engranajes",col=rainbow(3))
+```
+
